@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router, 
+  Routes, 
+  Route
+} from "react-router-dom";
+import Dashboard from './pages/Dashboard';
+import Client from "../src/pages/Client";
+import Emailpage from "../src/pages/Emailpage";
+import Messagepage from "./pages/Messagepage";
+import Email from "./pages/Emailpage";
+import Signin from './pages/MainCon';
+import Navbar from './pages/Navbar';
+import Header from './pages/Header';
+import Reset from './Component/dashboard/Reset';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return  (
+      <div>
+        <Router>
+            <Routes>
+              <Route path='/'  element={<Dashboard />}/>
+            </Routes>
+            <Routes>
+              <Route path='/Navbar'  element={<Dashboard />}/>
+            </Routes>
+            <Routes>
+              <Route path='/client' element={<Client/>}/>
+            </Routes>
+            <Routes>
+              <Route path='/Email' element={<Emailpage/>}/>
+            </Routes> 
+            <Routes>
+              <Route path='/Message' element={<Messagepage/>}/>
+            </Routes>         
+        </Router>
+      </div>
   );
+  
 }
 
 export default App;
